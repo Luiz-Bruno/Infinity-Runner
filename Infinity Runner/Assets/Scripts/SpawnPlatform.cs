@@ -5,7 +5,11 @@ using UnityEngine;
 public class SpawnPlatform : MonoBehaviour
 {
 
-    public List<GameObject> platforms = new List<GameObject>();
+    public List<GameObject> platforms = new List<GameObject>(); //Lista dos Prefabs das plataformas
+
+    private List<Transform> currentPlatforms = new List<Transform>(); //Lista das plataformas geradas na cena
+
+
 
     public float offset;
 
@@ -14,7 +18,8 @@ public class SpawnPlatform : MonoBehaviour
     {
         for(int i = 0; i < platforms.Count; i++)
         {
-            Instantiate(platforms[i], new Vector2(i * 30, 0), transform.rotation);
+            Transform p = Instantiate(platforms[i], new Vector2(i * 30, 0), transform.rotation).transform;
+            currentPlatforms.Add(p);
             offset += 30f;
         }
     }
