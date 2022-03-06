@@ -9,13 +9,15 @@ public class SpawnPlatform : MonoBehaviour
 
     private List<Transform> currentPlatforms = new List<Transform>(); //Lista das plataformas geradas na cena
 
-
+    private Transform player;
 
     public float offset;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        
         for(int i = 0; i < platforms.Count; i++)
         {
             Transform p = Instantiate(platforms[i], new Vector2(i * 30, 0), transform.rotation).transform;
