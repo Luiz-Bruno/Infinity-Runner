@@ -10,6 +10,8 @@ public class SpawnPlatform : MonoBehaviour
     private List<Transform> currentPlatforms = new List<Transform>(); //Lista das plataformas geradas na cena
 
     private Transform player;
+    private Transform currentPlatformPoint;
+    private int platformIndex;
 
     public float offset;
 
@@ -24,12 +26,35 @@ public class SpawnPlatform : MonoBehaviour
             currentPlatforms.Add(p);
             offset += 30f;
         }
+
+        currentPlatformPoint = currentPlatforms[platformIndex].GetComponent<Platform>().finalPoint;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Move();
+           
+    }
+
+    private void Move()
+    {
+        float distance = player.position.x - currentPlatformPoint.position.x; //Salvando a diferença da posição x do player e do final point da plataforma atual
+
+        if (distance >= 1) //Se o distance for maior do que 1, recicla a plataforma (ou seja, envia pra frente)
+        {
+            Recycle(currentPlatforms[platformIndex].gameObject);
+            platformIndex++;
+
+            if(platformIndex > currentPlatforms.Count - 1)
+            {
+                platformIndex = 0;
+            }
+
+            currentPlatformPoint = currentPlatforms[platformIndex].GetComponent<Platform>().finalPoint;
+
+        }
+
     }
 
     public void Recycle(GameObject platform)
