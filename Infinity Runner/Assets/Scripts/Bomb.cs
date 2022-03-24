@@ -14,6 +14,7 @@ public class Bomb : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         rig.AddForce(new Vector2(xAxis, yAxis), ForceMode2D.Impulse);
+        Destroy(gameObject, 5f);
     }
 
     // Update is called once per frame
