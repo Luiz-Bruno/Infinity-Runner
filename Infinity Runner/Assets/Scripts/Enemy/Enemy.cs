@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
         if(collision.CompareTag("Bullet"))
         {
             int dmg = collision.GetComponent<Projectile>().damage;
+            collision.GetComponent<Projectile>().OnHit();
             ApplyDamage(dmg);
         }
     }

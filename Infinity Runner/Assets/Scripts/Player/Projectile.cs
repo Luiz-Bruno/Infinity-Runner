@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour
     public float speed;
 
     public int damage;
+
+    public GameObject expPrefab;
     
     // Start is called before the first frame update
     void Start()
@@ -21,4 +23,20 @@ public class Projectile : MonoBehaviour
     {
         rig.velocity = Vector2.right * speed;
     }
+
+    public void OnHit()
+    {
+        GameObject e = Instantiate(expPrefab, transform.position, transform.rotation);
+        Destroy(e, 1f);
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == 8)
+        {
+            OnHit();
+        }
+    }
+
 }
