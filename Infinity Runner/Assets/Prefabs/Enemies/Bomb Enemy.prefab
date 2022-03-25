@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27108624d9789e84a888e754174de1ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 10
+  damage: 0
   bombPrefab: {fileID: 8312836310111759886, guid: 259fec0a1a26d654c849bdd213351302, type: 3}
   firePoint: {fileID: 6702382693256065011}
   throwTime: 2

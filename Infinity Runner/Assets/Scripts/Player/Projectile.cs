@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyEnemy : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     private Rigidbody2D rig;
     public float speed;
+
+    public int damage;
     
     // Start is called before the first frame update
     void Start()
@@ -15,9 +17,8 @@ public class FlyEnemy : MonoBehaviour
     }
 
     // Update is called once per frame
-
     private void FixedUpdate()
     {
-        rig.velocity = Vector2.left * speed;
+        rig.velocity = Vector2.right * speed;
     }
 }
