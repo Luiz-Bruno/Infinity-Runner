@@ -33,14 +33,24 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && !isJumping) // !isJumping é o mesmo que isJumping == false
         {
-            rig.AddForce(new Vector2(0, jumpforce), ForceMode2D.Impulse);
-            anim.SetBool("jumping", true);
-            isJumping = true;
+            OnJump();
         }
         if(Input.GetKeyDown(KeyCode.LeftControl))
         {
-            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            OnShoot();
         }
+    }
+
+    public void OnShoot()
+    {
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    }
+
+    public void OnJump()
+    {
+        rig.AddForce(new Vector2(0, jumpforce), ForceMode2D.Impulse);
+        anim.SetBool("jumping", true);
+        isJumping = true;
     }
 
     public void OnHit(int dmg)
