@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int health;
+    
     private Rigidbody2D rig;
     public Animator anim;
 
@@ -38,6 +40,16 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftControl))
         {
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        }
+    }
+
+    public void OnHit(int dmg)
+    {
+        health -= dmg;
+
+        if(health <= 0)
+        {
+            GameController.instance.ShowGameOver();
         }
     }
 
