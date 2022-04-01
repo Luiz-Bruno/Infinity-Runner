@@ -376,7 +376,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 314362662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1254031315}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &314362662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,12 +866,12 @@ GameObject:
   - component: {fileID: 654345951}
   - component: {fileID: 654345950}
   m_Layer: 5
-  m_Name: Game Over
+  m_Name: Game Over Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &654345949
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1400,6 +1412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40a7cec2cc133a46b671cf02215d66e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 654345948}
 --- !u!4 &1254031316
 Transform:
   m_ObjectHideFlags: 0
@@ -1526,6 +1539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1589049027}
   - component: {fileID: 1589049028}
+  - component: {fileID: 1589049029}
   m_Layer: 0
   m_Name: Game Over Coll
   m_TagString: Untagged
@@ -1573,6 +1587,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1589049029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589049026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221e0e4f5eb0a2b4d8e248517113d5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1699404661
 GameObject:
   m_ObjectHideFlags: 0
