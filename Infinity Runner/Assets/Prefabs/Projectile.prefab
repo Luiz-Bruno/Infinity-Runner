@@ -135,5 +135,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  damage: 2
+  damage: 5
   expPrefab: {fileID: 4164216598312497206, guid: 86b2e586f0cea9044bcb7fdcec13b5cc, type: 3}
